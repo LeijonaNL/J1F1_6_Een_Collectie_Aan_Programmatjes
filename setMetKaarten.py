@@ -3,7 +3,7 @@
 import os, random
 
 # Beschrijving
-# Maak een programmatje die een standaard deck met kaarten genereerd (54 kaarten), deze schut en de bovenste 7 -
+# Maak een programmatje die een standaard deck met kaarten genereerd (54 kaarten), deze schud en de bovenste 7 -
 # er afhaald op het scherm toont en daarna de overige kaarten in het deck.
 # De volgende regels gelden voor dit programma:
 #     Het deck bestaat uit 4 “kleuren” (harten, klaveren, schoppen & ruiten)
@@ -23,17 +23,15 @@ import os, random
 types = ['Harten', 'Klaveren', 'Schoppen', 'Ruiten']
 cards = ['aas', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'koning', 'vrouw', 'boer']
 deck, hand = [], []
-for i in range(len(types)):
-    if i % 2 == 0:
-        deck.append('Joker')
-    for x in range(len(cards)):
-        deck.append(f'{types[i]} {cards[x]}')
-deckSize = len(deck)
+for i in types:
+    for x in cards:
+        deck.append(f'{i} {x}')
+for z in range(2):
+    deck.append('Joker')
 for y in range(7):
-    handPick = random.choice(deck)
+    handPick = random.choice(deck) # .pop could also be used
     hand.append(f'Kaart {y+1} = {handPick}')
     deck.remove(handPick)
-    deckSize -= 1
     random.shuffle(deck)
 print(*hand,sep='\n')
 print(f'\ndeck ({len(deck)} kaarten):\n{deck}')
