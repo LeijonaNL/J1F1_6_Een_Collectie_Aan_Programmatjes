@@ -21,5 +21,5 @@ while shuffling: # There is a lower rotation with a sleep but you can also delet
     print(tickets, "\n")
     for x in range(1, amount+1):
         if names[x-1] == tickets[x-1]:
-            time.sleep(1)
+            time.sleep(0.5)
             shuffling = True

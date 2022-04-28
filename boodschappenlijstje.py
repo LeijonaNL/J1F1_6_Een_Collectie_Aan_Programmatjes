@@ -45,9 +45,11 @@ while repeat:
         elif repeatQuestion == "2" or repeatQuestion == "CONTINUE":
             os.system("cls")
             print("Alright, here's your ticket.")
+            print("----------\nTICKET\n----------\n")
             for key, value in shopList2.items():
-                print("----------\nTICKET\n----------\n", value, "x", key, "\n----------\n")
-                enter = input("Press enter to finish. ")
+                print(value, "x", key)
+            print("\n----------\n")
+            enter = input("Press enter to finish. ")
         else:
             print("Sorry, this input is invalid, please try again.")
             invalid = True
